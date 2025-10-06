@@ -1,1 +1,293 @@
-ESta é uma página de teste
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3D White — criatividade em cada camada</title>
+  <meta name="description" content="3D White — histórias e impressões 3D. Portfólio, galeria e contato." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Basic favicon (you can replace) -->
+  <link rel="icon" href="data:,">
+
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-mark" aria-hidden="true">
+          <!-- simple svg logo mark -->
+          <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo 3D White">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0%" stop-color="#0b57a4"/>
+                <stop offset="100%" stop-color="#ff7a18"/>
+              </linearGradient>
+            </defs>
+            <rect x="10" y="10" width="80" height="80" rx="12" fill="url(#g)"/>
+            <text x="50" y="60" font-family="Montserrat, sans-serif" font-size="44" text-anchor="middle" fill="#fff" font-weight="700">3D</text>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="company">3D White</span>
+          <span class="tagline">criatividade em cada camada</span>
+        </div>
+      </div>
+
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#stories">Histórias</a></li>
+          <li><a href="#prints">Impressões 3D</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <a class="btn btn-accent" href="#contact">Contato</a>
+        <button id="nav-toggle" aria-label="Abrir menu móvel">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / Banner -->
+  <section id="home" class="hero">
+    <!-- Replace the URL below with your Anycubic Kobra Max image path (recommended: /assets/anycubic-kobra.jpg) -->
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1601924582975-6c7d75e78a0d?auto=format&fit=crop&w=1600&q=80');"></div>
+
+    <div class="container hero-content">
+      <h1>Bem-vindo à <span class="accent">3D White</span></h1>
+      <p class="lead">Criatividade em cada camada — histórias, projetos e impressões 3D com acabamento profissional.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#prints">Ver Impressões 3D</a>
+        <a class="btn btn-outline" href="#portfolio">Ver Portfólio</a>
+      </div>
+    </div>
+    <div class="hero-wave" aria-hidden="true"></div>
+  </section>
+
+  <main>
+
+    <!-- Stories -->
+    <section id="stories" class="section">
+      <div class="container">
+        <h2>Histórias</h2>
+        <p class="section-sub">Relatos, processos e aprendizados por trás de cada projeto.</p>
+
+        <div class="stories-grid">
+          <article class="story-card">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=60" alt="Impressora 3D em operação">
+            <div class="story-body">
+              <h3>Como comecei com impressão 3D</h3>
+              <p>Meu primeiro projeto foi uma pequena escultura que me ensinou sobre escala, suporte e acabamento. Aqui compartilho o passo a passo.</p>
+              <a class="read-more" href="#stories">Ler mais →</a>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <img src="https://images.unsplash.com/photo-1615220085681-5b8a4f7f0f7b?auto=format&fit=crop&w=800&q=60" alt="Design 3D no computador">
+            <div class="story-body">
+              <h3>Modelagem e ajustes finos</h3>
+              <p>Detalhes que fazem diferença: escolher o material certo, ajustar retracements e calibrar camadas.</p>
+              <a class="read-more" href="#stories">Ler mais →</a>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=800&q=60" alt="Peças impressas prontas">
+            <div class="story-body">
+              <h3>Acabamento e pintura</h3>
+              <p>Com técnicas simples de lixamento e priming você transforma uma peça comum em algo profissional.</p>
+              <a class="read-more" href="#stories">Ler mais →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prints / Gallery -->
+    <section id="prints" class="section alt">
+      <div class="container">
+        <h2>Impressões 3D</h2>
+        <p class="section-sub">Galeria de projetos — clique para ver detalhes.</p>
+
+        <div class="gallery-grid" id="gallery">
+          <!-- Use your own images or leave these placeholders -->
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1549921296-3a1e5d1b3b3f?auto=format&fit=crop&w=800&q=60" alt="Peça impressa 1" data-full="https://images.unsplash.com/photo-1549921296-3a1e5d1b3b3f?auto=format&fit=crop&w=1600&q=80">
+            <figcaption>Miniatura articulada — PLA • 0.16mm</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1581091215367-4c73a1c4f9c7?auto=format&fit=crop&w=800&q=60" alt="Peça impressa 2" data-full="https://images.unsplash.com/photo-1581091215367-4c73a1c4f9c7?auto=format&fit=crop&w=1600&q=80">
+            <figcaption>Suporte funcional — PETG • resistente</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=800&q=60" alt="Peça impressa 3" data-full="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1600&q=80">
+            <figcaption>Peça decorativa — acabamento metálico</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=60" alt="Peça impressa 4" data-full="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1600&q=80">
+            <figcaption>Protótipo funcional — PLA+</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2>Portfólio</h2>
+        <p class="section-sub">Projetos selecionados e serviços oferecidos.</p>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <h3>Escultura Articulada</h3>
+            <p>Design exclusivo, articulado em 6 pontos. Ideal para brindes e expositores.</p>
+            <a href="#portfolio" class="small-btn">Ver projeto</a>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>Peças Funcionais</h3>
+            <p>Peças para montagem, peças de reposição, adaptadores e protótipos.</p>
+            <a href="#portfolio" class="small-btn">Ver projeto</a>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>Personalização e Pintura</h3>
+            <p>Acabamento, pintura e montagem para produtos finais prontos para venda.</p>
+            <a href="#portfolio" class="small-btn">Ver projeto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section alt contact-section">
+      <div class="container">
+        <h2>Contato</h2>
+        <p class="section-sub">Vamos conversar sobre seu projeto — fale comigo pelo WhatsApp.</p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Fale pelo WhatsApp</h3>
+            <p>Clique no botão abaixo para abrir o WhatsApp com uma mensagem pronta.</p>
+            <!-- REPLACE YOUR_NUMBER with your phone number in international format without + or leading zeros.
+                 Example Brasil (DDD 41) number: 5541999998888  => https://wa.me/5541999998888 -->
+            <a id="whatsapp-link" class="btn btn-accent" href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener">Abrir WhatsApp</a>
+          </div>
+
+          <form class="contact-form" onsubmit="alert('Você pode substituir este formulário por um Google Form ou integrar seu backend.'); return false;">
+            <label>
+              <span>Nome</span>
+              <input type="text" name="name" placeholder="Seu nome" required>
+            </label>
+            <label>
+              <span>E-mail</span>
+              <input type="email" name="email" placeholder="nome@exemplo.com" required>
+            </label>
+            <label>
+              <span>Mensagem</span>
+              <textarea name="message" rows="5" placeholder="Me conte sobre seu projeto..." required></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>3D White</strong> — Criatividade em cada camada
+      </div>
+      <div class="footer-links">
+        <a href="#top">Topo</a>
+        <a href="#contact">Contato</a>
+        <span>© <span id="year"></span> 3D White</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox modal for gallery -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="fechar">✕</button>
+    <img class="lightbox-img" src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <!-- Minimal JS -->
+  <script>
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const mainNav = document.getElementById('main-nav');
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+      navToggle.classList.toggle('open');
+    });
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          // close mobile nav if open
+          if (mainNav.classList.contains('open')) {
+            mainNav.classList.remove('open');
+            navToggle.classList.remove('open');
+          }
+        }
+      });
+    });
+
+    // simple lightbox for gallery images
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const lightboxCaption = document.querySelector('.lightbox-caption');
+    const galleryImgs = document.querySelectorAll('.gallery-item img');
+    galleryImgs.forEach(img => {
+      img.addEventListener('click', () => {
+        const full = img.dataset.full || img.src;
+        lightboxImg.src = full;
+        lightboxImg.alt = img.alt || '';
+        lightboxCaption.textContent = img.nextElementSibling ? img.nextElementSibling.textContent : img.alt;
+        lightbox.classList.add('visible');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+    document.querySelector('.lightbox-close').addEventListener('click', () => {
+      lightbox.classList.remove('visible');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    });
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('visible');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImg.src = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
