@@ -172,41 +172,46 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section alt contact-section">
-      <div class="container">
-        <h2>Contato</h2>
-        <p class="section-sub">Vamos conversar sobre seu projeto — fale comigo pelo WhatsApp.</p>
+<!-- Contact -->
+<section id="contact" class="section alt contact-section">
+  <div class="container">
+    <h2>Contato</h2>
+    <p class="section-sub">Vamos conversar sobre seu projeto — envie sua mensagem pelo formulário ou e-mail.</p>
 
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Fale pelo WhatsApp</h3>
-            <p>Clique no botão abaixo para abrir o WhatsApp com uma mensagem pronta.</p>
-            <!-- REPLACE YOUR_NUMBER with your phone number in international format without + or leading zeros.
-                 Example Brasil (DDD 41) number: 5541999998888  => https://wa.me/5541999998888 -->
-            <a id="whatsapp-link" class="btn btn-accent" href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener">Abrir WhatsApp</a>
-          </div>
-
-          <form class="contact-form" onsubmit="alert('Você pode substituir este formulário por um Google Form ou integrar seu backend.'); return false;">
-            <label>
-              <span>Nome</span>
-              <input type="text" name="name" placeholder="Seu nome" required>
-            </label>
-            <label>
-              <span>E-mail</span>
-              <input type="email" name="email" placeholder="nome@exemplo.com" required>
-            </label>
-            <label>
-              <span>Mensagem</span>
-              <textarea name="message" rows="5" placeholder="Me conte sobre seu projeto..." required></textarea>
-            </label>
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit">Enviar</button>
-            </div>
-          </form>
-        </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Envie um e-mail direto</h3>
+        <p>Clique no botão abaixo para abrir seu aplicativo de e-mail já preenchido.</p>
+        <a class="btn btn-accent" 
+           href="mailto:contato3dwhite@gmail.com?subject=Novo%20projeto%203D%20White&body=Olá,%20quero%20falar%20sobre%20um%20novo%20projeto%203D.">
+          Enviar e-mail
+        </a>
       </div>
-    </section>
+
+      <form 
+        action="https://formspree.io/f/mpwyjwok" 
+        method="POST" 
+        class="contact-form">
+        <label>
+          <span>Nome</span>
+          <input type="text" name="name" placeholder="Seu nome" required>
+        </label>
+        <label>
+          <span>E-mail</span>
+          <input type="email" name="_replyto" placeholder="nome@exemplo.com" required>
+        </label>
+        <label>
+          <span>Mensagem</span>
+          <textarea name="message" rows="5" placeholder="Me conte sobre seu projeto..." required></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 
   </main>
 
