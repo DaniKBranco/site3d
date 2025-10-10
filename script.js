@@ -73,18 +73,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if(lightbox) lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
 
 
-  const contactForm = document.querySelector('.contact-form');
+const contactForm = document.querySelector('.contact-form');
 const toast = document.getElementById('toast');
 
-contactForm.addEventListener('submit', function(e) {
-  // aguarda o envio normal do Formspree
-  setTimeout(() => {
-    toast.classList.add('show');
+if(contactForm && toast){
+  contactForm.addEventListener('submit', function(e) {
+    // delay pequeno para dar tempo do Formspree processar
     setTimeout(() => {
-      toast.classList.remove('show');
-    }, 3000); // toast desaparece após 3 segundos
-  }, 100); // delay pequeno para garantir envio
-});
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000); // desaparece após 3 segundos
+    }, 100);
+  });
+}
+
 
 
 });
