@@ -378,3 +378,81 @@ a {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+/* Mobile first adjustments for Encomendas page */
+
+/* O início - stories */
+.stories-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.story-card {
+  width: 100%;
+}
+
+/* Hero adjustments */
+.hero-content {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero-cta .btn {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+/* Gallery adjustments */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Adjust container padding for mobile */
+.container {
+  padding: 0 1rem;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* Media queries for tablets and desktops */
+@media (min-width: 600px) {
+  .stories-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .story-card {
+    width: calc(50% - 1rem);
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-cta .btn {
+    display: inline-block;
+    width: auto;
+    margin: 0 0.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .story-card {
+    width: calc(33.33% - 1rem);
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
