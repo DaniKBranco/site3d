@@ -1,153 +1,311 @@
-:root{
-  --bg: #07080a;
-  --surface: #0f1518;
-  --muted: #9aa6b2;
-  --accent: #ff7b00;      /* laranja vibrante */
-  --accent-2: #ff9a42;
-  --blue: #0b57a4;
-  --text: #e6eef8;
-  --radius: 12px;
-  --container: 100%;
-  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  -webkit-font-smoothing:antialiased;
+/* ==========================
+   3D White - Styles
+   Mobile First / Dark Mode
+========================== */
+
+/* ------------------------
+   Global
+------------------------ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Reset / base */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.45;
-  -webkit-tap-highlight-color: transparent;
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
-/* container */
-.container{
-  width:calc(100% - 32px);
-  max-width:1100px;
-  margin:0 auto;
-  padding:20px 0;
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  background-color: #121212; /* dark mode */
+  color: #f0f0f0;
 }
 
-/* Header - fixed */
-.site-header{
-  position:fixed;
-  top:0;left:0;right:0;
-  z-index:999;
-  background: linear-gradient(180deg, rgba(10,12,14,0.92), rgba(10,12,14,0.85));
-  border-bottom: 1px solid rgba(255,255,255,0.03);
-  backdrop-filter: blur(6px);
-}
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:10px 16px;
-}
-.brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit}
-.logo-mark{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:8px}
-.brand-text .company{font-weight:700;font-size:16px}
-.brand-text .tagline{font-size:11px;color:var(--muted);display:block}
-
-/* Nav */
-.main-nav{display:none} /* mobile-first: hidden, shown on larger screens */
-.actions{display:flex;gap:8px;align-items:center}
-#nav-toggle{background:transparent;border:0;color:var(--text);font-size:20px;padding:8px;border-radius:8px;cursor:pointer}
-
-/* Buttons */
-.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer}
-.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#081018}
-.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
-.btn-accent{background:var(--accent);color:#081018}
-
-/* Hero */
-.hero{margin-top:72px;position:relative;min-height:48vh;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.02)}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.45) saturate(1.05);transform:scale(1.03)}
-.hero-content{position:relative;z-index:2;padding:28px 0 40px}
-.hero h1{margin:0;font-size:20px}
-.lead{color:var(--muted);margin-top:8px;font-size:14px}
-.hero-cta{margin-top:12px;display:flex;gap:8px}
-
-/* Sections */
-.section{padding:18px 0}
-.section.alt{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border-top:1px solid rgba(255,255,255,0.02)}
-.section h2{margin:0 0 6px;font-size:18px}
-.section-sub{color:var(--muted);font-size:13px;margin-bottom:10px}
-
-/* Stories grid */
-.stories-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.story-card{background:var(--surface);border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(2,6,23,0.4)}
-.story-card img{width:100%;height:140px;object-fit:cover;display:block}
-.story-body{padding:10px}
-.story-body h3{margin:0;font-size:15px}
-.read-more{display:inline-block;margin-top:8px;color:var(--accent);text-decoration:none;font-weight:700;font-size:13px}
-
-/* Gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.gallery-grid.large{grid-template-columns:repeat(2,1fr)}
-.gallery-item{background:var(--surface);border-radius:10px;overflow:hidden}
-.gallery-item img{width:100%;height:140px;object-fit:cover;display:block;cursor:pointer;transition:transform .2s}
-.gallery-item img:hover{transform:scale(1.03)}
-.gallery-item figcaption{padding:8px;font-size:12px;color:var(--muted)}
-
-/* Portfolio / cards */
-.portfolio-grid{display:grid;grid-template-columns:1fr;gap:10px}
-.portfolio-card{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
-.small-btn{display:inline-block;margin-top:8px;color:var(--accent);font-weight:700}
-
-/* Contact / form */
-.contact-grid{display:grid;grid-template-columns:1fr;gap:10px}
-.contact-card{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.02)}
-.contact-form input, .contact-form textarea, form.stack input, form.stack textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);margin-top:8px}
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);border-radius:10px;border:1px solid rgba(255,255,255,0.02);padding:12px}
-
-/* grid util for contato page */
-.grid{display:grid;grid-template-columns:1fr;gap:10px}
-
-/* Footer */
-.site-footer{padding:14px 0;border-top:1px solid rgba(255,255,255,0.02);margin-top:18px}
-.footer-inner{display:flex;flex-direction:column;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
-
-/* Lightbox */
-.lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.8);opacity:0;visibility:hidden;transition:opacity .15s,visibility .15s;z-index:9999}
-.lightbox.visible{opacity:1;visibility:visible}
-.lightbox-img{max-width:94%;max-height:80vh;border-radius:8px}
-.lightbox-close{position:absolute;top:18px;right:18px;background:transparent;border:0;color:#fff;font-size:20px}
-
-/* Forms and small helpers */
-.stack input, .stack textarea{margin-bottom:8px}
-.row{display:flex;gap:8px;flex-wrap:wrap}
-.row .btn{flex:1}
-
-/* Responsive / larger screens */
-@media(min-width:768px){
-  .main-nav{display:block}
-  .actions #nav-toggle{display:none}
-  .hero h1{font-size:28px}
-  .stories-grid{grid-template-columns:repeat(3,1fr)}
-  .gallery-grid{grid-template-columns:repeat(4,1fr)}
-  .portfolio-grid{grid-template-columns:repeat(3,1fr)}
-  .contact-grid{grid-template-columns:1fr 1fr}
-  .footer-inner{flex-direction:row;justify-content:space-between}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ------------------------
+   Header / Nav
+------------------------ */
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: #1c1c1c;
+  z-index: 999;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-text {
+  margin-left: 0.75rem;
+}
+
+.brand-text .company {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.brand-text .tagline {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.main-nav {
+  display: none; /* mobile first */
+}
+
+.main-nav.open {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #1c1c1c;
+  width: 200px;
+  padding: 1rem;
+  border-left: 1px solid #333;
+}
+
+.main-nav ul {
+  list-style: none;
+}
+
+.main-nav ul li {
+  margin-bottom: 1rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#nav-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ------------------------
+   Hero / Banner
+------------------------ */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 4rem 1rem 6rem;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5);
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero .accent {
+  background: linear-gradient(90deg, #0b57a4, #ff7a18);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero .lead {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hero-cta .btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #0b57a4;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #09447a;
+}
+
+.btn-outline {
+  background: none;
+  color: #ff7a18;
+  border: 2px solid #ff7a18;
+}
+
+.btn-outline:hover {
+  background-color: #ff7a18;
+  color: #121212;
+}
+
+.btn-accent {
+  background-color: #ff7a18;
+  color: #fff;
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: #e06a00;
+}
+
+/* ------------------------
+   Sections
+------------------------ */
+.section {
+  padding: 3rem 0;
+}
+
+.section-alt {
+  background-color: #1a1a1a;
+}
+
+.section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.section-sub {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+/* ------------------------
+   Grid layouts
+------------------------ */
+.stories-grid,
+.gallery-grid,
+.portfolio-grid,
+.contact-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.stories-grid article,
+.portfolio-card,
+.contact-card {
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.stories-grid article img,
+.gallery-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ------------------------
+   Lightbox
+------------------------ */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18,18,18,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.lightbox.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+.lightbox-caption {
+  margin-top: 0.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ------------------------
+   Toast Notification
+------------------------ */
 .toast {
   position: fixed;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%) translateY(100%);
-  background-color: #0b57a4; /* azul */
+  background-color: #ff7a18;
   color: #fff;
   padding: 12px 24px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   font-weight: 600;
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
   z-index: 9999;
+  text-align: center;
 }
 
 .toast.show {
@@ -155,3 +313,68 @@ body{
   opacity: 1;
 }
 
+/* ------------------------
+   Footer
+------------------------ */
+.site-footer {
+  padding: 1.5rem 0;
+  background-color: #1c1c1c;
+  color: #aaa;
+  text-align: center;
+  font-size: 0.875rem;
+  border-top: 1px solid #333;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: #ff7a18;
+}
+
+/* ------------------------
+   Responsive adjustments
+------------------------ */
+@media(min-width: 768px){
+  .main-nav {
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+    padding: 0;
+  }
+
+  .main-nav ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .actions #nav-toggle {
+    display: none;
+  }
+
+  .hero-cta {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .stories-grid,
+  .gallery-grid,
+  .portfolio-grid,
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 1024px){
+  .stories-grid,
+  .gallery-grid,
+  .portfolio-grid,
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
