@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galeria — 3D White</title>
+  <meta name="description" content="Galeria de impressões 3D da 3D White.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header (same markup as index) -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="3D White — Início">
+        <div class="logo-mark" aria-hidden="true" style="background:linear-gradient(90deg,#0b57a4,#ff7b00);border-radius:8px;padding:6px;color:#fff;font-weight:700">3D</div>
+        <div class="brand-text">
+          <span class="company">3D White</span>
+          <span class="tagline">criatividade em cada camada</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="inicio.html">O início</a></li>
+          <li><a href="galeria.html" aria-current="page">Galeria</a></li>
+          <li><a href="encomendas.html">Encomendas</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <a class="btn btn-accent" href="contato.html">Contato</a>
+        <button id="nav-toggle" aria-label="Abrir menu móvel" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>Galeria</h1>
+        <p class="section-sub">Projetos e impressões recentes.</p>
+
+        <div class="gallery-grid large" id="galleryList">
+          <!-- preencha com suas imagens -->
+          <figure class="gallery-item">
+            <img src="assets/img/gal1.jpg" alt="Projeto 1" data-full="assets/img/gal1-large.jpg">
+            <figcaption>Miniatura articulada</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/img/gal2.jpg" alt="Projeto 2" data-full="assets/img/gal2-large.jpg">
+            <figcaption>Suporte funcional</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/img/gal3.jpg" alt="Projeto 3" data-full="assets/img/gal3-large.jpg">
+            <figcaption>Peça decorativa</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/img/gal4.jpg" alt="Projeto 4" data-full="assets/img/gal4-large.jpg">
+            <figcaption>Protótipo funcional</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year-g"></span> 3D White</div>
+      <div><a href="index.html">Início</a></div>
+    </div>
+  </footer>
+
+  <!-- Lightbox reused -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="fechar">✕</button>
+    <img class="lightbox-img" src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
