@@ -1,27 +1,27 @@
-// set current year on all pages
+// ==========================
+// 3D White - Main JS
+// ==========================
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  // 1️⃣ Atualiza ano automaticamente
   const y = new Date().getFullYear();
   document.querySelectorAll('#year, #year-g, #year-o, #year-c').forEach(el => {
     if(el) el.textContent = y;
   });
 
-  // mobile nav toggle (affects all pages)
+  // 2️⃣ Mobile nav toggle
   const navToggle = document.getElementById('nav-toggle');
   const mainNav = document.getElementById('main-nav');
   if(navToggle && mainNav){
     navToggle.addEventListener('click', () => {
       const open = mainNav.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      // small animation: when open, show overlay on mobile
-      if(open){
-        mainNav.style.display = 'block';
-      } else {
-        mainNav.style.display = '';
-      }
+      mainNav.style.display = open ? 'block' : '';
     });
   }
 
-  // simple smooth scroll (for anchors on same page)
+  // 3️⃣ Smooth scroll for anchors
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e){
       const href = this.getAttribute('href');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // lightbox for gallery images (works on all pages using .gallery-item img)
+  // 4️⃣ Lightbox for gallery
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.querySelector('.lightbox-img');
   const lightboxCaption = document.querySelector('.lightbox-caption');
@@ -72,22 +72,31 @@ document.addEventListener('DOMContentLoaded', () => {
   if(closeBtn) closeBtn.addEventListener('click', closeLightbox);
   if(lightbox) lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
 
+  // 5️⃣ Toast notification & Formspree submission
+  const contactForm = document.querySelector('.contact-form');
+  const toast = document.getElementById('toast');
 
-const contactForm = document.querySelector('.contact-form');
-const toast = document.getElementById('toast');
+  if(contactForm && toast){
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // evita reload
+      const formData = new FormData(contactForm);
 
-if(contactForm && toast){
-  contactForm.addEventListener('submit', function(e) {
-    // delay pequeno para dar tempo do Formspree processar
-    setTimeout(() => {
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000); // desaparece após 3 segundos
-    }, 100);
-  });
-}
-
-
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if(response.ok){
+          toast.classList.add('show');      // mostra toast
+          contactForm.reset();               // limpa formulário
+          setTimeout(() => {
+            toast.classList.remove('show'); // esconde toast após 3s
+          }, 3000);
+        } else {
+          alert("Erro ao enviar. Tente novamente!");
+        }
+      }).catch(() => alert("Erro ao enviar. Tente novamente!"));
+    });
+  }
 
 });
