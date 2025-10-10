@@ -456,3 +456,42 @@ a {
   }
 }
 
+/* Encomendas form adjustments - mobile first */
+.encomendas-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.encomendas-form input,
+.encomendas-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.encomendas-form button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #ff7b00;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.encomendas-form button:hover {
+  background-color: #ff9500;
+}
+
+.encomendas-form .link-duvidas {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #ff7b00;
+  text-decoration: underline;
+}
